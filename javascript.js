@@ -11,6 +11,9 @@ for (let j = 0; j < 16; j++) {
     for (let i = 0; i < 16; i++) {
         let column = document.createElement('div');
         column.style = 'border: 1px solid black; flex: 16;';
+        column.addEventListener('mouseover', ()=> {
+            column.style.backgroundColor = 'black';
+        });
         row.append(column);
     }
 }

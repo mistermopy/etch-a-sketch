@@ -10,7 +10,7 @@ for (let j = 0; j < 16; j++) {
     container.append(row);
     for (let i = 0; i < 16; i++) {
         let column = document.createElement('div');
-        column.style = 'border: 1px solid black; flex: 16; height: 10%;';
+        column.style = 'border: 1px solid black; flex: 16;';
         row.append(column);
     }
 }

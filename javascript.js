@@ -15,9 +15,21 @@ function makeGrid(size) {
         newGrid.append(row);
         for (let i = 0; i < size; i++) {
             let column = document.createElement('div');
-            column.style = `border: 1px solid black; flex: ${size};`;
+            column.style = `border: 1px solid black; flex: ${size}; background-color: rgb(255,255,255)`;
             column.addEventListener('mouseover', ()=> {
-                column.style.backgroundColor = 'grey';
+                const redVal = Math.random() * 256;
+                const greenVal = Math.random() * 256;
+                const blueVal = Math.random() * 256;
+                if (column.style.backgroundColor == 'rgb(255, 255, 255)') {
+                    column.style.backgroundColor = `rgb(${redVal}, ${greenVal}, ${blueVal})`;
+                } else if (column.style.backgroundColor == 'rgb(0, 0, 0)') {
+                    column.style.backgroundColor = 'rgb(255, 255, 255)';
+                } else {
+                    newRedVal = (redVal * .1) + redVal;
+                    newBlueVal = (blueVal * .1) + blueVal;
+                    newGreenVal = (greenVal * .1) + greenVal;
+                    column.style.backgroundColor = `rgb(${newRedVal}, ${newBlueVal}, ${newGreenVal})`;
+                }
             });
             row.append(column);
         }

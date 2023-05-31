@@ -48,4 +48,5 @@ btnReset.addEventListener('click', ()=> {
     } else {
         makeGrid(userSize);
     }
+    
 });
